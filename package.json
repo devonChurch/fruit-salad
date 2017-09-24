@@ -1,0 +1,30 @@
+{
+  "name": "fruit-salad",
+  "version": "0.0.0",
+  "description": "A simple React router that uses query strings to differentiate routes",
+  "main": "index.js",
+  "scripts": {
+    "commit": "git-cz",
+    "commitizen": "commitizen",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devonChurch/fruit-salad.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devonChurch/fruit-salad/issues"
+  },
+  "homepage": "https://github.com/devonChurch/fruit-salad#readme",
+  "devDependencies": {
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
