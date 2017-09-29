@@ -1,20 +1,8 @@
-console.log('fruit-salad');
+import createRouterComponent from './router';
+import createLinkComponent from './link';
 
-// const foo = (() => {
-//   const bar = 'Bar.';
-//   const baz = ['B', 'A', 'R'];
-//
-//   return { bar, baz };
-// })();
-//
-// class Bar {
-//   foo = foo;
-//
-//   baz = () => {
-//     console.log('Baz.');
-//   };
-// }
+console.log('fruit-salad | 0.1');
 
-const fruitSalad = 'Baz.';
+const FruitSalad = createRouterComponent(createLinkComponent);
 
-export default fruitSalad;
+export default FruitSalad;

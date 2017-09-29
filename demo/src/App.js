@@ -1,19 +1,57 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import FruitSalad from 'fruit-salad';
 import './App.css';
 
+const PageOne = () => (
+<div>
+	Page: One
+</div>
+);
+
+const PageTwo = () => (
+<div>
+	Page: Two
+</div>
+);
+
+const PageThree = () => (
+<div>
+	Page: Three
+</div>
+);
+
+const PageFallback = () => (
+<div>
+	Page: Not Found
+</div>
+);
+
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+render() {
+  return (
+    <div>
+    	Hello World!
+    	<FruitSalad routes={[
+    			{ page: 'one', jsx: <PageOne /> },
+    			{ page: 'two', jsx: <PageTwo /> },
+    			{ page: 'three', jsx: <PageThree /> },
+    		]}
+        fallback={<PageFallback />}>
+    		{({Link, page, jsx}) => (
+    			<div>
+    				<header>
+    					Header:
+    					{console.log('re-render', {Link, page, jsx})}
+    					<Link page={'one'}>One</Link>
+    					<Link page={'two'}>Two</Link>
+    					<Link page={'three'}>Three</Link>
+    					<Link page={'null'}>Broken link</Link>
+    				</header>
+    				{jsx}
+    			</div>
+    		)}
+    	</FruitSalad>
+    </div>
     );
   }
 }

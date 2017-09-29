@@ -2,11 +2,17 @@
   "name": "fruit-salad",
   "version": "0.0.0",
   "description": "A simple React router that uses query strings to differentiate routes",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "commit": "git-cz",
     "commitizen": "commitizen",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test:lint",
+    "test:lint": "eslint src/**.js",
+    "webpack": "webpack",
+    "eslint": "eslint"
   },
   "repository": {
     "type": "git",
@@ -19,12 +25,37 @@
   },
   "homepage": "https://github.com/devonChurch/fruit-salad#readme",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.16",
     "commitizen": "^2.9.6",
-    "cz-conventional-changelog": "^2.0.0"
+    "cz-conventional-changelog": "^2.0.0",
+    "eslint": "^4.7.2",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-flowtype": "^2.36.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.4.0",
+    "flow-bin": "^0.55.0",
+    "flow-typed": "^2.1.5",
+    "prettier": "^1.7.0",
+    "webpack": "^3.6.0"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "qs": "^6.5.1",
+    "react": "^16.0.0"
   }
 }

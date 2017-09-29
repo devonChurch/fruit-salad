@@ -26,6 +26,13 @@ const esLint = {
   rules: {
     'prettier/prettier': 'error',
 
+    // // I have been having conflicts between "prettier" removing bracket wrapped
+    // // arrows e.g. () => (foo - bar ? baz : zap) and then ESLint complaining. In
+    // // that regard I am going to mute this formatting query.
+    // 'no-confusing-arrow': 'off',
+
+    'arrow-parens': 'off',
+
     // Default is only .jsx files but I have added in generic .js into the
     // acceptable extension list to remove the cognitive load of differentiating
     // file types.
@@ -35,10 +42,6 @@ const esLint = {
         extensions: ['.js', '.jsx'],
       },
     ],
-
-    // I am emulating the “object-curly-spacing” rule where we introduce spacing
-    // around curly brace content. Its also helps ease eye strain.
-    'react/jsx-curly-spacing': ['warn', 'always'],
   },
 
   settings: {
